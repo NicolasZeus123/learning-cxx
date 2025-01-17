@@ -26,7 +26,7 @@ int main(int argc, char **argv) {
     ptrs[2] = std::move(shared);
     ASSERT(observer.use_count() == 3, "");
 
-    std::ignore = std::move(ptrs[0]);   // 这一行没有运行
+    std::ignore = std::move(ptrs[0]);   // 这一行没有运行,很奇怪
     ptrs[1] = std::move(ptrs[1]);
     ptrs[1] = std::move(ptrs[2]);
     std::cout << ptrs[0] << std::endl;
